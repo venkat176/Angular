@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular</title>
+		<script type="text/javascript" src="/sites/Registration/SiteAssets/Angulartask/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="/sites/Registration/SiteAssets/Angulartask/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/sites/Registration/SiteAssets/Angulartask/js/angular.min.js"></script>
+		<script type="text/javascript" src="/sites/Registration/SiteAssets/Angulartask/js/angular-route.min.js"></script>
+		<script type="text/javascript" src="/sites/Registration/SiteAssets/Angulartask/js/angular-resource.min.js"></script>
+		<script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
+		<script type="text/javascript" src="/_layouts/15/sp.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+		<script type="text/javascript" src="/sites/Registration/SiteAssets/Angulartask/js/Edit.js"></script>
+		<link type="text/css" rel="stylesheet" href="/sites/Registration/SiteAssets/Angulartask/CSS/bootstrap.min.css" >
+		
+		
+		<style type="text/css">
+			.asd{
+				width:100%;
+			}
+			label{
+				 width:150px;
+				 font-size:18px;
+				 
+				}
+			.inputcls{
+					width:180px;
+					padding:15px;
+					display:inline-block;
+					border-radius:3px;
+					border:0px !important;
+				}
+			.butcls{
+					display:flex;
+					justify-content:flex-end;
+					margin-top:20px;
+				}
+			button{
+					margin-right:17px;
+					border-radius:3px;
+					padding:3px
+                }
+            
+            #lencs{
+					width:180px;
+					padding:3px;
+					border-radius:3px;
+					border:0px !important;
+				}
+			.container{
+					display:flex;
+					justify-content:center;
+					background-color:#EAF0F1;
+					padding:50px;
+				}
+			#pad{
+					padding:3px;
+					border-radius:3px;
+					border:1px solid #ABABAB;
+				}
+			
+		.error{
+				color:#EF5245;
+			}
+		.csdesgin{
+				border:1px solid #F5F5F5;
+				color:#7F7F7F;
+			}	
+			
+		</style>
+	</head>
+	<body>
+	
+		<div class="container" ng-app="formApp" >		
+			<div ng-controller="formctrl">
+				<div class="row">
+					<div class="col">
+						<label>First Name:</label>
+						<input type="text" ng-model="fname" class="inputcls" id="getFname"  >
+					</div>
+					<div class="col">
+						<label>Last Name:</label>
+						<input type="text" ng-model="lname"  class="inputcls" id="getLname"  >
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						<label>Mobile Number:</label>
+						<input type="text" id="pad" ng-model="mobilenum"  class="inputcls" id="getMobile" >
+					</div>
+					<div class="col">
+						<label>Country:</label>
+						<!--<input type="text" ng-model="count" class="inputcls">-->
+						<select ng-model="count" id="lencs" id="getCount">
+							<option ng-repeat="item in listItems" value="{{item.Countries}}">{{item.Countries}}</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="row butcls" >
+					<button type="button" class="csdesgin" ng-click="update()" value="update">update</button>
+					<button type="button" class="csdesgin" ng-click="remove()" value="delete">delete</button>
+					<button type="button" class="csdesgin" ng-click="cancel()" value="cancel">cancel</button>					
+			   </div>
+			   
+			</div>
+		</div>
+	
+	</body>
+</html>
